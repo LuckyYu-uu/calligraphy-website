@@ -2,53 +2,60 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>小书童书法课堂</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>小书童书法课堂</h1>
-    <p>专为幼儿园及小学生打造的书法启蒙课程</p>
+    <div class="container">
+      <h1>小书童书法课堂</h1>
+      <p>专为幼儿园及小学生打造的书法启蒙课程</p>
+    </div>
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#about">关于课程</a></li>
-      <li><a href="#teachers">师资力量</a></li>
-      <li><a href="#enroll">报名方式</a></li>
-      <li><a href="#contact">联系我们</a></li>
-    </ul>
+    <div class="container">
+      <ul>
+        <li><a href="#about">课程介绍</a></li>
+        <li><a href="#teachers">师资力量</a></li>
+        <li><a href="#enroll">报名方式</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <section id="about">
-    <h2>关于课程</h2>
-    <p>小书童书法课堂专注3-8岁儿童书法启蒙，采用趣味动画教学+老师手把手指导，寓教于乐，培养孩子专注力与艺术修养。</p>
-    <ul>
-      <li>基础笔画教学</li>
-      <li>常用汉字书写</li>
-      <li>每日临帖练习</li>
-      <li>阶段性成果展示</li>
-    </ul>
-  </section>
+  <main class="container">
+    <section id="about">
+      <h2>课程介绍</h2>
+      <p>为3-8岁儿童设计，通过趣味教学和专业指导，提升孩子的书写兴趣与审美能力。</p>
+      <ul>
+        <li>基础笔画教学</li>
+        <li>规范汉字练习</li>
+        <li>每日临帖</li>
+        <li>成果展示</li>
+      </ul>
+    </section>
 
-  <section id="teachers">
-    <h2>师资力量</h2>
-    <p>我们拥有多年教学经验的书法老师，专业、美术院校背景，耐心亲和，深受孩子喜爱。</p>
-  </section>
+    <section id="teachers">
+      <h2>师资力量</h2>
+      <p>教师均毕业于美术与师范类院校，经验丰富，耐心亲切，深受孩子喜爱。</p>
+    </section>
 
-  <section id="enroll">
-    <h2>报名方式</h2>
-    <p>欢迎家长扫码添加微信或拨打电话进行咨询与报名。</p>
-    <img src="weixin-qrcode.png" alt="微信二维码" style="width: 150px;">
-    <p>电话：123-456-7890</p>
-  </section>
+    <section id="enroll">
+      <h2>报名方式</h2>
+      <p>添加微信或拨打电话进行咨询：</p>
+      <img src="weixin-qrcode.png" alt="微信二维码" class="qrcode">
+      <p>电话：123-456-7890</p>
+    </section>
 
-  <section id="contact">
-    <h2>联系我们</h2>
-    <p>地址：XX市XX区XX路XX号（近XX小学）</p>
-    <p>微信号：xiaoshutong</p>
-    <p>邮箱：contact@xiaoshutong.com</p>
-  </section>
+    <section id="contact">
+      <h2>联系我们</h2>
+      <p>地址：XX市XX区XX路XX号</p>
+      <p>微信：xiaoshutong</p>
+      <p>邮箱：contact@xiaoshutong.com</p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 小书童书法课堂 版权所有</p>
