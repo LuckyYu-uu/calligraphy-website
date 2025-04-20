@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>JobAndGame</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .section {
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: #fff;
+      animation: fadeIn 1s ease;
+      transition: transform 0.3s;
+    }
+
+    .section:hover {
+      transform: scale(1.01);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 功能区 */
+    .function-zone {
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    }
+
+    .function-zone button {
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .function-zone button:hover {
+      background-color: #0056b3;
+    }
+
+    /* 实验区 */
+    .experiment-zone {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .experiment-card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: slideIn 1s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* 休闲区 */
+    .leisure-zone {
+      background: linear-gradient(to right, #d4fc79, #96e6a1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .leisure-bubble {
+      position: absolute;
+      bottom: -40px;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      animation: floatUp 6s infinite ease-in;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-300px) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    .leisure-text {
+      font-size: 18px;
+      color: #2f4f4f;
+      text-align: center;
+      padding: 40px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- 功能区 -->
+    <div class="section function-zone">
+      <h2>功能区</h2>
+      <p style="text-align:center">点击按钮体验功能：</p>
+      <div style="text-align:center">
+        <button>功能1</button>
+        <button>功能2</button>
+        <button>功能3</button>
+      </div>
+    </div>
+
+    <!-- 实验区 -->
+    <div class="section experiment-zone">
+      <h2 style="width:100%">实验区</h2>
+      <div class="experiment-card">实验项目 A</div>
+      <div class="experiment-card">实验项目 B</div>
+      <div class="experiment-card">实验项目 C</div>
+    </div>
+
+    <!-- 休闲区 -->
+    <div class="section leisure-zone">
+      <h2>休闲区</h2>
+      <div class="leisure-text">欢迎来休闲区放松一下 🧘</div>
+      <!-- 随机生成几个泡泡 -->
+      <div class="leisure-bubble" style="left:10%; animation-delay:0s;"></div>
+      <div class="leisure-bubble" style="left:30%; animation-delay:1s;"></div>
+      <div class="leisure-bubble" style="left:50%; animation-delay:2s;"></div>
+      <div class="leisure-bubble" style="left:70%; animation-delay:3s;"></div>
+      <div class="leisure-bubble" style="left:90%; animation-delay:4s;"></div>
+    </div>
+  </div>
+
+</body>
+</html>
