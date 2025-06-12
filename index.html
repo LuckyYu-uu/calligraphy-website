@@ -1,64 +1,156 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小书童书法课堂</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucky 的个人作品集</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .hero-bg {
+      background: linear-gradient(270deg, #667eea, #764ba2, #43cea2);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .skill-card {
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      transform: scale(1);
+    }
+    .skill-card:hover {
+      transform: scale(1.2) translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .scroll-up {
+      transition: transform 0.3s ease;
+    }
+    .scroll-up.reverse {
+      transform: translateY(-20px);
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <div class="container">
-      <h1>小书童书法课堂</h1>
-      <p>专为幼儿园及小学生打造的书法启蒙课程</p>
+<body class="text-gray-800 bg-gray-50">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white shadow z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Lucky 的作品集</h1>
+      <nav class="space-x-4 hidden md:block">
+        <a href="#home" class="hover:text-indigo-600">首页</a>
+        <a href="#skills" class="hover:text-indigo-600">技能</a>
+        <a href="#portfolio" class="hover:text-indigo-600">作品</a>
+        <a href="#about" class="hover:text-indigo-600">关于我</a>
+        <a href="#contact" class="hover:text-indigo-600">联系</a>
+      </nav>
     </div>
   </header>
 
-  <nav>
-    <div class="container">
-      <ul>
-        <li><a href="#about">课程介绍</a></li>
-        <li><a href="#teachers">师资力量</a></li>
-        <li><a href="#enroll">报名方式</a></li>
-        <li><a href="#contact">联系我们</a></li>
-      </ul>
+  <!-- Hero Section -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20">
+    <div>
+      <h2 class="text-4xl font-extrabold mb-4" data-aos="fade-up">你好，我是 Lucky</h2>
+      <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="200">Java 开发者｜前端设计｜视频剪辑｜平面设计｜AI 工具用户</p>
+      <a href="#portfolio" class="bg-white text-indigo-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-100 transition">浏览我的作品</a>
     </div>
-  </nav>
+  </section>
 
-  <main class="container">
-    <section id="about">
-      <h2>课程介绍</h2>
-      <p>为3-8岁儿童设计，通过趣味教学和专业指导，提升孩子的书写兴趣与审美能力。</p>
-      <ul>
-        <li>基础笔画教学</li>
-        <li>规范汉字练习</li>
-        <li>每日临帖</li>
-        <li>成果展示</li>
-      </ul>
-    </section>
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-right">我的技能</h3>
+      <div class="grid md:grid-cols-5 gap-8 text-center">
+        <div class="skill-card" data-aos="zoom-in">
+          <h4 class="font-semibold text-2xl">Java 开发</h4>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
+          <h4 class="font-semibold text-2xl">前端开发</h4>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
+          <h4 class="font-semibold text-2xl">视频剪辑</h4>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
+          <h4 class="font-semibold text-2xl">图像设计</h4>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
+          <h4 class="font-semibold text-2xl">ChatGPT & 国内AI</h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="teachers">
-      <h2>师资力量</h2>
-      <p>教师均毕业于美术与师范类院校，经验丰富，耐心亲切，深受孩子喜爱。</p>
-    </section>
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4">
+      <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-left">我的作品</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up">
+          <img src="assets/images/project-java.jpg" alt="Java 项目">
+          <div class="p-4">
+            <h4 class="font-bold mb-2">Java 管理系统</h4>
+            <p>一个简单的 Java 学生信息管理项目，包含注册登录、权限分配功能。</p>
+          </div>
+        </div>
+        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+          <img src="assets/images/project-front.jpg" alt="前端作品">
+          <div class="p-4">
+            <h4 class="font-bold mb-2">响应式个人网站</h4>
+            <p>使用 HTML/CSS/JS 制作的静态网站，展示个人技能与项目。</p>
+          </div>
+        </div>
+        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/images/project-video.jpg" alt="视频作品">
+          <div class="p-4">
+            <h4 class="font-bold mb-2">宣传短片剪辑</h4>
+            <p>使用 Premiere 裁剪和配乐的短视频，用于活动宣传。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section id="enroll">
-      <h2>报名方式</h2>
-      <p>添加微信或拨打电话进行咨询：</p>
-      <img src="weixin-qrcode.png" alt="微信二维码" class="qrcode">
-      <p>电话：123-456-7890</p>
-    </section>
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6" data-aos="fade-right">关于我</h3>
+      <p class="text-lg leading-relaxed" data-aos="fade-up">我是一位热爱技术与设计的创作者，掌握 Java 后端开发、HTML/CSS 前端设计，熟练使用视频剪辑和图像处理工具，熟悉 ChatGPT 和国内多种 AI 工具，致力于将创意与技术结合，制作出美观实用的产品。</p>
+    </div>
+  </section>
 
-    <section id="contact">
-      <h2>联系我们</h2>
-      <p>地址：XX市XX区XX路XX号</p>
-      <p>微信：xiaoshutong</p>
-      <p>邮箱：contact@xiaoshutong.com</p>
-    </section>
-  </main>
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-100">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold mb-6" data-aos="fade-left">联系我</h3>
+      <p class="mb-4">📧 邮箱：example@example.com</p>
+      <p>🔗 GitHub：<a href="https://github.com/yourname" class="text-indigo-600 hover:underline">github.com/yourname</a></p>
+    </div>
+  </section>
 
-  <footer>
-    <p>&copy; 2025 小书童书法课堂 版权所有</p>
-  </footer>
+  <footer class="text-center py-6 text-sm text-gray-500 bg-white">© 2025 Lucky 版权所有</footer>
+
+  <script>
+    AOS.init({ once: true });
+
+    // Scroll event handler
+    window.addEventListener("wheel", function(e) {
+      if (e.deltaY < 0) {
+        // Scroll up, trigger animations
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+          section.classList.add('scroll-up');
+          setTimeout(() => {
+            section.classList.remove('scroll-up');
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
