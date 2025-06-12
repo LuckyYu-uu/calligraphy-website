@@ -24,10 +24,17 @@
     .skill-card {
       transition: transform 0.5s ease, box-shadow 0.5s ease;
       transform: scale(1);
+      background: linear-gradient(45deg, #6ee7b7, #3b82f6);
+      padding: 40px 30px;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .skill-card:hover {
       transform: scale(1.2) translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
     .scroll-up {
       transition: transform 0.3s ease;
@@ -48,7 +55,6 @@
         <a href="#skills" class="hover:text-indigo-600">技能</a>
         <a href="#portfolio" class="hover:text-indigo-600">作品</a>
         <a href="#about" class="hover:text-indigo-600">关于我</a>
-        <a href="#contact" class="hover:text-indigo-600">联系</a>
       </nav>
     </div>
   </header>
@@ -68,19 +74,19 @@
       <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-right">我的技能</h3>
       <div class="grid md:grid-cols-5 gap-8 text-center">
         <div class="skill-card" data-aos="zoom-in">
-          <h4 class="font-semibold text-2xl">Java 开发</h4>
+          Java 开发
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-          <h4 class="font-semibold text-2xl">前端开发</h4>
+          前端开发
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-          <h4 class="font-semibold text-2xl">视频剪辑</h4>
+          视频剪辑
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          <h4 class="font-semibold text-2xl">图像设计</h4>
+          图像设计
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-          <h4 class="font-semibold text-2xl">ChatGPT & 国内AI</h4>
+          ChatGPT & 国内AI
         </div>
       </div>
     </div>
@@ -121,15 +127,6 @@
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-6" data-aos="fade-right">关于我</h3>
       <p class="text-lg leading-relaxed" data-aos="fade-up">我是一位热爱技术与设计的创作者，掌握 Java 后端开发、HTML/CSS 前端设计，熟练使用视频剪辑和图像处理工具，熟悉 ChatGPT 和国内多种 AI 工具，致力于将创意与技术结合，制作出美观实用的产品。</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-100">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h3 class="text-3xl font-bold mb-6" data-aos="fade-left">联系我</h3>
-      <p class="mb-4">📧 邮箱：example@example.com</p>
-      <p>🔗 GitHub：<a href="https://github.com/yourname" class="text-indigo-600 hover:underline">github.com/yourname</a></p>
     </div>
   </section>
 
