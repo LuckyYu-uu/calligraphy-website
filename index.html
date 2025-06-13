@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky 的个人作品集</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     html {
@@ -23,24 +23,24 @@
     }
     .skill-card {
       transition: transform 0.5s ease, box-shadow 0.5s ease;
-      transform: scale(1);
-      background: linear-gradient(45deg, #6ee7b7, #3b82f6);
-      padding: 40px 30px;
-      border-radius: 12px;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: bold;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      font-size: 2.2rem;
+      background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+      padding: 2rem 1.5rem;
+      border-radius: 1.25rem;
     }
     .skill-card:hover {
-      transform: scale(1.2) translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+      transform: scale(1.08);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
-    .scroll-up {
-      transition: transform 0.3s ease;
+
+    /* 滚轮触发页面动画 - 呼吸放大效果 */
+    .active-section .skill-card {
+      animation: pulseScale 1.2s ease-in-out 1;
     }
-    .scroll-up.reverse {
-      transform: translateY(-20px);
+    @keyframes pulseScale {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.12); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
@@ -60,7 +60,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20">
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center pt-20" data-aos="fade-up">
     <div>
       <h2 class="text-4xl font-extrabold mb-4" data-aos="fade-up">你好，我是 Lucky</h2>
       <p class="text-lg mb-6" data-aos="fade-up" data-aos-delay="200">Java 开发者｜前端设计｜视频剪辑｜平面设计｜AI 工具用户</p>
@@ -69,85 +69,103 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-20 bg-white">
+  <section id="skills" class="py-20 bg-white" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-4">
       <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-right">我的技能</h3>
-      <div class="grid md:grid-cols-5 gap-8 text-center">
+      <div class="grid md:grid-cols-6 gap-8 text-center">
         <div class="skill-card" data-aos="zoom-in">
-          Java 开发
+          <h4 class="font-semibold">Java 开发</h4>
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="100">
-          前端开发
+          <h4 class="font-semibold">前端开发</h4>
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="200">
-          视频剪辑
+          <h4 class="font-semibold">视频剪辑</h4>
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="300">
-          图像设计
+          <h4 class="font-semibold">图像设计</h4>
         </div>
         <div class="skill-card" data-aos="zoom-in" data-aos-delay="400">
-          ChatGPT & 国内AI
+          <h4 class="font-semibold">ChatGPT & 国内AI</h4>
+        </div>
+        <div class="skill-card" data-aos="zoom-in" data-aos-delay="500">
+          <h4 class="font-semibold">Office 软件使用</h4>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 bg-gray-100">
+  <section id="portfolio" class="py-20 bg-gray-100" data-aos="fade-up">
     <div class="max-w-7xl mx-auto px-4">
       <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-left">我的作品</h3>
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up">
-          <img src="assets/images/project-java.jpg" alt="Java 项目">
-          <div class="p-4">
-            <h4 class="font-bold mb-2">Java 管理系统</h4>
-            <p>一个简单的 Java 学生信息管理项目，包含注册登录、权限分配功能。</p>
-          </div>
+        <div class="bg-white shadow rounded p-6" data-aos="fade-up">
+          <h4 class="font-bold text-xl mb-2">Java 管理系统</h4>
+          <p>一个简单的 Java 学生信息管理项目，包含注册登录、权限分配功能。</p>
         </div>
-        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-          <img src="assets/images/project-front.jpg" alt="前端作品">
-          <div class="p-4">
-            <h4 class="font-bold mb-2">响应式个人网站</h4>
-            <p>使用 HTML/CSS/JS 制作的静态网站，展示个人技能与项目。</p>
-          </div>
+        <div class="bg-white shadow rounded p-6" data-aos="fade-up" data-aos-delay="100">
+          <h4 class="font-bold text-xl mb-2">响应式个人网站</h4>
+          <p>使用 HTML/CSS/JS 制作的静态网站，展示个人技能与项目。</p>
         </div>
-        <div class="bg-white shadow rounded overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-          <img src="assets/images/project-video.jpg" alt="视频作品">
-          <div class="p-4">
-            <h4 class="font-bold mb-2">宣传短片剪辑</h4>
-            <p>使用 Premiere 裁剪和配乐的短视频，用于活动宣传。</p>
-          </div>
+        <div class="bg-white shadow rounded p-6" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="font-bold text-xl mb-2">宣传短片剪辑</h4>
+          <p>使用 Premiere 裁剪和配乐的短视频，用于活动宣传。</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 bg-white">
+  <section id="about" class="py-20 bg-white" data-aos="fade-up">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-6" data-aos="fade-right">关于我</h3>
       <p class="text-lg leading-relaxed" data-aos="fade-up">我是一位热爱技术与设计的创作者，掌握 Java 后端开发、HTML/CSS 前端设计，熟练使用视频剪辑和图像处理工具，熟悉 ChatGPT 和国内多种 AI 工具，致力于将创意与技术结合，制作出美观实用的产品。</p>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="text-center py-6 text-sm text-gray-500 bg-white">© 2025 Lucky 版权所有</footer>
 
+  <!-- AOS Init -->
   <script>
-    AOS.init({ once: true });
+    AOS.init({
+      once: false,
+      duration: 800,
+      easing: 'ease-in-out',
+      mirror: true
+    });
 
-    // Scroll event handler
-    window.addEventListener("wheel", function(e) {
-      if (e.deltaY < 0) {
-        // Scroll up, trigger animations
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
-          section.classList.add('scroll-up');
-          setTimeout(() => {
-            section.classList.remove('scroll-up');
-          }, 300);
+    // 滚轮事件：检测当前视口最接近的 section，给技能区加动画
+    (() => {
+      const sections = ['home', 'skills', 'portfolio', 'about'].map(id => document.getElementById(id));
+      let ticking = false;
+
+      function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY + window.innerHeight / 2;
+          let currentSection = sections[0];
+          for (const section of sections) {
+            if (section.offsetTop <= scrollY) currentSection = section;
+          }
+
+          // 先移除所有技能区动画类
+          sections.forEach(sec => sec.classList.remove('active-section'));
+          // 仅当当前section是skills时，添加动画类
+          if (currentSection.id === 'skills') {
+            currentSection.classList.add('active-section');
+          }
+
+          ticking = false;
         });
       }
-    });
+
+      window.addEventListener('scroll', onScroll);
+      // 初始化触发一次
+      onScroll();
+    })();
   </script>
 </body>
 </html>
