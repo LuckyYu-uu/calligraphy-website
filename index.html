@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky 的个人作品集</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="tailwind.min.css" rel="stylesheet" />
+  <link href="aos.css" rel="stylesheet" />
+  <script src="aos.js"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -32,8 +32,6 @@
       transform: scale(1.08);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
-
-    /* 滚轮触发页面动画 - 呼吸放大效果 */
     .active-section .skill-card {
       animation: pulseScale 1.2s ease-in-out 1;
     }
@@ -127,7 +125,7 @@
   <!-- Footer -->
   <footer class="text-center py-6 text-sm text-gray-500 bg-white">© 2025 Lucky 版权所有</footer>
 
-  <!-- AOS Init -->
+  <!-- AOS 初始化和滚动动画 -->
   <script>
     AOS.init({
       once: false,
@@ -136,7 +134,7 @@
       mirror: true
     });
 
-    // 滚轮事件：检测当前视口最接近的 section，给技能区加动画
+    // 滚轮事件动画控制
     (() => {
       const sections = ['home', 'skills', 'portfolio', 'about'].map(id => document.getElementById(id));
       let ticking = false;
@@ -151,9 +149,7 @@
             if (section.offsetTop <= scrollY) currentSection = section;
           }
 
-          // 先移除所有技能区动画类
           sections.forEach(sec => sec.classList.remove('active-section'));
-          // 仅当当前section是skills时，添加动画类
           if (currentSection.id === 'skills') {
             currentSection.classList.add('active-section');
           }
@@ -163,7 +159,6 @@
       }
 
       window.addEventListener('scroll', onScroll);
-      // 初始化触发一次
       onScroll();
     })();
   </script>
