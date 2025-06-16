@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky 的个人作品集</title>
-  <link href="tailwind.min.css" rel="stylesheet" />
-  <link href="aos.css" rel="stylesheet" />
-  <script src="aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -32,6 +32,7 @@
       transform: scale(1.08);
       box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     }
+    /* 滚轮触发页面动画 - 呼吸放大效果 */
     .active-section .skill-card {
       animation: pulseScale 1.2s ease-in-out 1;
     }
@@ -39,6 +40,76 @@
       0%   { transform: scale(1); }
       50%  { transform: scale(1.12); }
       100% { transform: scale(1); }
+    }
+
+    /* 作品展示区 */
+    #portfolio {
+      padding: 4rem 1rem;
+      background-color: #f3f4f6; /* Tailwind 的 bg-gray-100 */
+    }
+    #portfolio h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: #333;
+      border-bottom: 3px solid #5a4fcf;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .portfolio-item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgb(90 79 207 / 0.15);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgb(90 79 207 / 0.3);
+    }
+    .portfolio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .portfolio-item:hover img {
+      transform: scale(1.08);
+    }
+    .portfolio-content {
+      padding: 1rem 1.2rem 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .portfolio-content h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      color: #5a4fcf;
+    }
+    .portfolio-content p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 500px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -94,23 +165,42 @@
   </section>
 
   <!-- Portfolio Section -->
-  <section id="portfolio" class="py-20 bg-gray-100" data-aos="fade-up">
-    <div class="max-w-7xl mx-auto px-4">
-      <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-left">我的作品</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white shadow rounded p-6" data-aos="fade-up">
-          <h4 class="font-bold text-xl mb-2">Java 管理系统</h4>
-          <p>一个简单的 Java 学生信息管理项目，包含注册登录、权限分配功能。</p>
+  <section id="portfolio" data-aos="fade-up">
+    <h3>我的作品</h3>
+    <div class="portfolio-grid">
+
+      <article class="portfolio-item">
+        <img src="erp-system.png" alt="前后端管理系统" />
+        <div class="portfolio-content">
+          <h4>前后端管理系统（ERP）</h4>
+          <p>基于前端+后端技术，企业管理系统示例。</p>
         </div>
-        <div class="bg-white shadow rounded p-6" data-aos="fade-up" data-aos-delay="100">
-          <h4 class="font-bold text-xl mb-2">响应式个人网站</h4>
-          <p>使用 HTML/CSS/JS 制作的静态网站，展示个人技能与项目。</p>
+      </article>
+
+      <article class="portfolio-item">
+        <img src="video-design.png" alt="视频剪辑与图像设计" />
+        <div class="portfolio-content">
+          <h4>视频剪辑与图像设计</h4>
+          <p>专业的视频编辑和图像设计作品。</p>
         </div>
-        <div class="bg-white shadow rounded p-6" data-aos="fade-up" data-aos-delay="200">
-          <h4 class="font-bold text-xl mb-2">宣传短片剪辑</h4>
-          <p>使用 Premiere 裁剪和配乐的短视频，用于活动宣传。</p>
+      </article>
+
+      <article class="portfolio-item">
+        <img src="ai-tools.png" alt="AI 网站使用" />
+        <div class="portfolio-content">
+          <h4>AI 网站使用</h4>
+          <p>使用AI工具提升工作效率和创新。</p>
         </div>
-      </div>
+      </article>
+
+      <article class="portfolio-item">
+        <img src="office-suite.png" alt="Office 办公软件使用" />
+        <div class="portfolio-content">
+          <h4>Office 办公软件（三件套）</h4>
+          <p>熟练操作Word, Excel, PPT，制作各类办公文件。</p>
+        </div>
+      </article>
+
     </div>
   </section>
 
@@ -125,7 +215,7 @@
   <!-- Footer -->
   <footer class="text-center py-6 text-sm text-gray-500 bg-white">© 2025 Lucky 版权所有</footer>
 
-  <!-- AOS 初始化和滚动动画 -->
+  <!-- AOS Init -->
   <script>
     AOS.init({
       once: false,
@@ -134,7 +224,6 @@
       mirror: true
     });
 
-    // 滚轮事件动画控制
     (() => {
       const sections = ['home', 'skills', 'portfolio', 'about'].map(id => document.getElementById(id));
       let ticking = false;

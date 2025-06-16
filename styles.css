@@ -1,0 +1,216 @@
+/* Reset 和基本样式 */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font-family: "微软雅黑", Arial, sans-serif;
+  background: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部 */
+.header {
+  background: #5a4fcf;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.nav a:hover {
+  color: #fbbf24;
+}
+
+/* 主要内容区 */
+main {
+  flex-grow: 1;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 通用 Section 样式 */
+.section {
+  margin-bottom: 4rem;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4b46a0;
+  border-bottom: 3px solid #5a4fcf;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* 关于我和技能 */
+.section-about p,
+.section-skills ul {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+}
+
+.section-skills ul {
+  list-style: inside disc;
+  margin-top: 0.5rem;
+}
+
+/* 作品区网格布局 */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* 单个作品卡片 */
+.portfolio-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(90, 79, 207, 0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 4px solid transparent;
+  border-image-slice: 1;
+  cursor: default;
+}
+.portfolio-item:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 32px rgba(90, 79, 207, 0.35);
+}
+
+/* 给每个作品不同渐变边框 */
+.portfolio-item:nth-child(1) {
+  border-image-source: linear-gradient(90deg, #667eea, #764ba2);
+}
+.portfolio-item:nth-child(2) {
+  border-image-source: linear-gradient(90deg, #ec4899, #fcd34d);
+}
+.portfolio-item:nth-child(3) {
+  border-image-source: linear-gradient(90deg, #34d399, #14b8a6);
+}
+.portfolio-item:nth-child(4) {
+  border-image-source: linear-gradient(90deg, #fbbf24, #f97316);
+}
+
+/* 图片 */
+.portfolio-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease;
+}
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+/* 标题 */
+.portfolio-item h3 {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0.5rem 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #764ba2, #43cea2);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* 描述 */
+.portfolio-item p {
+  margin: 0 1rem 1rem 1rem;
+  color: #555;
+  flex-grow: 1;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* 按钮 */
+.btn {
+  margin: 0 1rem 1rem 1rem;
+  background-color: #5a4fcf;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(90, 79, 207, 0.3);
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+.btn:hover {
+  background-color: #4b3fc0;
+}
+
+/* 各按钮颜色变体 */
+.btn-pink {
+  background-color: #ec4899;
+  box-shadow: 0 4px 8px rgba(236, 72, 153, 0.3);
+}
+.btn-pink:hover {
+  background-color: #db3f8a;
+}
+.btn-green {
+  background-color: #34d399;
+  box-shadow: 0 4px 8px rgba(52, 211, 153, 0.3);
+}
+.btn-green:hover {
+  background-color: #2cb88e;
+}
+.btn-yellow {
+  background-color: #fbbf24;
+  box-shadow: 0 4px 8px rgba(251, 191, 36, 0.3);
+  color: #333;
+}
+.btn-yellow:hover {
+  background-color: #d2a916;
+}
+
+/* 联系我部分 */
+.section-contact p a {
+  color: #5a4fcf;
+  font-weight: 600;
+  text-decoration: none;
+}
+.section-contact p a:hover {
+  text-decoration: underline;
+}
+
+/* 页脚 */
+.footer {
+  background: #5a4fcf;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+/* 响应式 */
+@media (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+  .nav a {
+    margin: 0 0.5rem;
+  }
+}
